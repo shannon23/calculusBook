@@ -10,6 +10,7 @@
 \newtheorem{mylem}{Lemma}
 \newtheorem{mycor}{Corollary}
 
+
 \usepackage{hyperref}
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
@@ -31,6 +32,7 @@
     filecolor=magenta,      % color of file links
     urlcolor=cyan           % color of external links
 }
+
 % New definition of square root:
 % it defines the new \sqrt in terms of the old one
 \usepackage{letltxmacro}
@@ -45,8 +47,10 @@
 \renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2} }
 \makeatother
 
+
 \usepackage{datetime}
 \newdateformat{mydate}{\the\year}
+
 
 \author{An Open Source Collaboration}
 \title{Introduction to Calculus}
@@ -56,7 +60,9 @@
 \begin{document}
 
 %\maketitle
+
 \input{copyright}
+
 
 \tableofcontents
 
@@ -95,6 +101,7 @@
 \input{tables}
 
 \input{preCalcTables}
+
 
 \input{fdl}
 
