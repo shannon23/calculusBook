@@ -1,0 +1,77 @@
+\documentclass[fleqn]{book}
+
+\usepackage{mathtools}
+\usepackage{makeidx}
+\usepackage{xfrac}
+\usepackage{amsthm}
+
+\newtheorem{mythm}{Theorem}
+\newtheorem{mydef}{Definition}
+\newtheorem{mylem}{Lemma}
+\newtheorem{mycor}{Corollary}
+
+% New definition of square root:
+% it defines the new \sqrt in terms of the old one
+\usepackage{letltxmacro}
+\makeatletter
+\let\oldr@@t\r@@t
+\def\r@@t#1#2{%
+\setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+\LetLtxMacro{\oldsqrt}{\sqrt}
+\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2} }
+\makeatother
+
+
+\author{An Open Source Collaboration}
+\title{Introduction to Calculus}
+
+\makeindex
+
+\begin{document}
+
+%\maketitle
+
+\tableofcontents
+
+% Note:
+% \input{filename} imports the commands from filename into the target file;
+% it's equivalent to typing all the commands from filename right into the
+% current file where the \input line is
+%
+% \include{filename} essentially does a \clearpage before and after \input{filename},
+% together with some magic to switch to another .aux file, and omit the inclusion at
+% all if you have an \includeonly without the filename in the argument
+
+% original list of topics
+%\input{outline}
+
+%\input{intro}
+
+%\input{precalcReview}
+
+\input{limits}
+
+\input{diffCalc}
+
+\input{intCalc}
+
+\input{specFunc}
+
+\input{numInt}
+
+
+
+\input{multiCalc}
+
+\input{series}
+
+\input{tables}
+
+\input{preCalcTables}
+
+\printindex
+
+\end{document}
